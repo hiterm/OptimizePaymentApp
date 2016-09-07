@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">OptimizePayment</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="button_calc_for_payment">計算</string>
+    <string name="show_payment">支払い: %1$d</string>
+    <string name="show_change">おつり: %1$d</string>
+</resources>
