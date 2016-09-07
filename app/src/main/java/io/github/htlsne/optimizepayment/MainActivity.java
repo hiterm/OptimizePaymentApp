@@ -1,7 +1,10 @@
 package io.github.htlsne.optimizepayment;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -58,11 +61,19 @@ public class MainActivity extends AppCompatActivity
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
 
+        // 所持金の取得
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        int walletAmount = prefs.getInt("walletAmount", -1);
+        TextView textView = (TextView) findViewById(R.id.textView_wallet_amount);
+        textView.setText(getString(R.string.show_wallet_amount, walletAmount));
+
         // ボタンの設定
         findViewById(R.id.button_calc_for_payment).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int walletAmount = 1448;
+                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                int walletAmount = prefs.getInt("walletAmount", -1);
+
                 MoneySet moneySet = MoneySet.valueOf(walletAmount);
                 EditText editText = (EditText) findViewById(R.id.editText_total_amount);
                 int totalAmount = Integer.parseInt(editText.getText().toString());
@@ -130,6 +141,8 @@ public class MainActivity extends AppCompatActivity
 
         switch (id) {
             case R.id.nav_set_wallet_amount:
+                Intent intent = new Intent(this, SetWalletAmountActivity.class);
+                startActivity(intent);
             case R.id.nav_settings:
         }
 
