@@ -83,11 +83,11 @@ public class MainActivity extends AppCompatActivity
                     int totalAmount = Integer.parseInt(editText.getText().toString());
                     MoneySet paymentSet = moneySet.getSetForPayment(totalAmount);
 
-                    if (paymentSet != null) {
+                    if (paymentSet != null) {   // お金が足りたとき
                         int payment = paymentSet.getAmount();
                         textViewPayment.setText(getString(R.string.show_payment, payment));
                         textViewChange.setText(getString(R.string.show_change, payment - totalAmount));
-                    } else {
+                    } else {                    // お金が足りないとき
                         textViewPayment.setText(R.string.show_payment_shortage);
                         textViewChange.setText("");
                     }
