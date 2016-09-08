@@ -87,13 +87,17 @@ public class MainActivity extends AppCompatActivity
                         int payment = paymentSet.getAmount();
                         textViewPayment.setText(getString(R.string.show_payment, payment));
                         textViewChange.setText(getString(R.string.show_change, payment - totalAmount));
+
+                        DialogFragment dialog = new ConfirmDialogFragment();
+                        Bundle bundle = new Bundle();
+                        bundle.putInt("payment", payment);
+                        bundle.putInt("change", payment - totalAmount);
+                        dialog.setArguments(bundle);
+                        dialog.show(getSupportFragmentManager(), "confirmDialog");
                     } else {                    // お金が足りないとき
                         textViewPayment.setText(R.string.show_payment_shortage);
                         textViewChange.setText("");
                     }
-
-                    DialogFragment dialog = new ConfirmDialogFragment();
-                    dialog.show(getSupportFragmentManager(), "confirmDialog");
                 }
             }
         });
