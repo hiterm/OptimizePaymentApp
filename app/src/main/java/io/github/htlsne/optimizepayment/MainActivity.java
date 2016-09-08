@@ -91,6 +91,9 @@ public class MainActivity extends AppCompatActivity
                         textViewPayment.setText(R.string.show_payment_shortage);
                         textViewChange.setText("");
                     }
+
+                    DialogFragment dialog = new ConfirmDialogFragment();
+                    dialog.show(getSupportFragmentManager(), "confirmDialog");
                 }
             }
         });
