@@ -9,7 +9,9 @@
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:theme="@style/DialogTable"
+        android:padding="10dp">
 
         <TableRow
             android:layout_width="match_parent"

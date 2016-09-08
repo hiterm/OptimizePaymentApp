@@ -29,6 +29,7 @@ public class ConfirmDialogFragment extends DialogFragment {
         textViewChange.setText(Integer.toString(change));
 
         builder.setView(layout)
+                .setTitle("確認")
                 .setPositiveButton("支払う", null)
                 .setNegativeButton("キャンセル", null);
 
