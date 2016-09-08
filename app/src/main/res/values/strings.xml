@@ -15,4 +15,7 @@
     <string name="title_activity_set_wallet_amount">SetWalletAmountActivity</string>
 
     <string name="button_set_wallet_amount">設定</string>
+
+    <string name="dialog_no_input">入力してください</string>
+    <string name="dialog_no_input_positive_button">OK</string>
 </resources>
