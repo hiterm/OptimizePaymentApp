@@ -49,12 +49,17 @@ public class SetWalletAmountActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 EditText editText = (EditText) findViewById(R.id.editText_input_wallet_amount);
-                int walletAmount = Integer.parseInt(editText.getText().toString());
+                String walletAmountStr = editText.getText().toString();
+                if ("".equals(walletAmountStr)) {
 
-                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                SharedPreferences.Editor editor = prefs.edit();
-                editor.putInt("walletAmount", walletAmount);
-                editor.apply();
+                } else {
+                    int walletAmount = Integer.parseInt(walletAmountStr);
+
+                    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putInt("walletAmount", walletAmount);
+                    editor.apply();
+                }
             }
         });
     }
