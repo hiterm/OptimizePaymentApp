@@ -61,12 +61,6 @@ public class MainActivity extends AppCompatActivity
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
 
-        // 所持金の取得
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        int walletAmount = prefs.getInt("walletAmount", -1);
-        TextView textView = (TextView) findViewById(R.id.textView_wallet_amount);
-        textView.setText(getString(R.string.show_wallet_amount, walletAmount));
-
         // ボタンの設定
         findViewById(R.id.button_calc_for_payment).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -189,5 +183,21 @@ public class MainActivity extends AppCompatActivity
         );
         AppIndex.AppIndexApi.end(client, viewAction);
         client.disconnect();
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        // 所持金の取得
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        if (prefs.contains("walletAmount")) {
+            int walletAmount = prefs.getInt("walletAmount", 0);
+            TextView textView = (TextView) findViewById(R.id.textView_wallet_amount);
+            textView.setText(getString(R.string.show_wallet_amount, walletAmount));
+        } else {
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putInt("walletAmount", 0);
+            editor.apply();
+        }
     }
 }
