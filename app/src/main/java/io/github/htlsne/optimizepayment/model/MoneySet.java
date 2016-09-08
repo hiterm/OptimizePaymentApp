@@ -252,7 +252,7 @@ public class MoneySet {
             }
         }
 
-        result.setB10000(rest / 10000);     // 10000は別に処理
+        setterArr[NUMBER_OF_COIN_TYPES - 1] = rest / 10000;     // 10000は別に処理
 
         result.setFromArray(setterArr);
 
