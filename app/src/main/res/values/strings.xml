@@ -9,6 +9,7 @@
     <string name="show_wallet_amount">所持金: %1$d</string>
     <string name="button_calc_for_payment">計算</string>
     <string name="show_payment">支払い: %1$d</string>
+    <string name="show_payment_no_input">金額を入力してください</string>
     <string name="show_payment_shortage">所持金が不足しています</string>
     <string name="show_change">おつり: %1$d</string>
     <string name="title_activity_set_wallet_amount">SetWalletAmountActivity</string>

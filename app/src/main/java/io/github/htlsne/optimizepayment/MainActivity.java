@@ -71,18 +71,26 @@ public class MainActivity extends AppCompatActivity
 
                 MoneySet moneySet = MoneySet.valueOf(walletAmount);
                 EditText editText = (EditText) findViewById(R.id.editText_total_amount);
-                int totalAmount = Integer.parseInt(editText.getText().toString());
-                MoneySet paymentSet = moneySet.getSetForPayment(totalAmount);
+                String totalAmountStr = editText.getText().toString();
 
                 TextView textViewPayment = (TextView) findViewById(R.id.textView_payment);
                 TextView textViewChange = (TextView) findViewById(R.id.textView_change);
-                if (paymentSet != null) {
-                    int payment = paymentSet.getAmount();
-                    textViewPayment.setText(getString(R.string.show_payment, payment));
-                    textViewChange.setText(getString(R.string.show_change, payment - totalAmount));
-                } else {
-                    textViewPayment.setText(R.string.show_payment_shortage);
+
+                if ("".equals(totalAmountStr)) {    // 入力がなかったとき
+                    textViewPayment.setText(R.string.show_payment_no_input);
                     textViewChange.setText("");
+                } else {                            // 入力があったとき
+                    int totalAmount = Integer.parseInt(editText.getText().toString());
+                    MoneySet paymentSet = moneySet.getSetForPayment(totalAmount);
+
+                    if (paymentSet != null) {
+                        int payment = paymentSet.getAmount();
+                        textViewPayment.setText(getString(R.string.show_payment, payment));
+                        textViewChange.setText(getString(R.string.show_change, payment - totalAmount));
+                    } else {
+                        textViewPayment.setText(R.string.show_payment_shortage);
+                        textViewChange.setText("");
+                    }
                 }
             }
         });
