@@ -135,10 +135,14 @@ public class MainActivity extends AppCompatActivity
 //        }
 
         switch (id) {
+            case R.id.nav_payment:
+                startActivity(new Intent(this, MainActivity.class));
+                break;
             case R.id.nav_set_wallet_amount:
-                Intent intent = new Intent(this, SetWalletAmountActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(this, SetWalletAmountActivity.class));
+                break;
             case R.id.nav_settings:
+                break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -185,6 +189,7 @@ public class MainActivity extends AppCompatActivity
         AppIndex.AppIndexApi.end(client, viewAction);
         client.disconnect();
     }
+
     @Override
     protected void onResume() {
         super.onResume();

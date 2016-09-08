@@ -1,5 +1,6 @@
 package io.github.htlsne.optimizepayment;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -96,8 +97,14 @@ public class SetWalletAmountActivity extends AppCompatActivity
 //        }
 
         switch (id) {
+            case R.id.nav_payment:
+                startActivity(new Intent(this, MainActivity.class));
+                break;
             case R.id.nav_set_wallet_amount:
+                startActivity(new Intent(this, SetWalletAmountActivity.class));
+                break;
             case R.id.nav_settings:
+                break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
