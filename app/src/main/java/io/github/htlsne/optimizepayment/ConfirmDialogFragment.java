@@ -44,6 +44,9 @@ public class ConfirmDialogFragment extends DialogFragment {
                         SharedPreferences.Editor editor = prefs.edit();
                         editor.putInt("walletAmount", nextWalletAmount);
                         editor.apply();
+
+                        TextView textView = (TextView) getActivity().findViewById(R.id.textView_wallet_amount);
+                        textView.setText(getString(R.string.show_wallet_amount, nextWalletAmount));
                     }
                 })
                 .setNegativeButton("キャンセル", null);
