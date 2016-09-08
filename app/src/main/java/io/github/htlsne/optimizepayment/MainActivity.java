@@ -90,6 +90,7 @@ public class MainActivity extends AppCompatActivity
 
                         DialogFragment dialog = new ConfirmDialogFragment();
                         Bundle bundle = new Bundle();
+                        bundle.putInt("totalAmount", totalAmount);
                         bundle.putInt("payment", payment);
                         bundle.putInt("change", payment - totalAmount);
                         dialog.setArguments(bundle);

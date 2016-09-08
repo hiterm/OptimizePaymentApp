@@ -39,7 +39,8 @@ public class ConfirmDialogFragment extends DialogFragment {
                         // preferenceにwalletAmountの変更を書き出す
                         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
                         int currentWalletAmount = prefs.getInt("walletAmount", 0);
-                        int nextWalletAmount = currentWalletAmount - payment;
+                        int totalAmount = getArguments().getInt("totalAmount");
+                        int nextWalletAmount = currentWalletAmount - totalAmount;
                         SharedPreferences.Editor editor = prefs.edit();
                         editor.putInt("walletAmount", nextWalletAmount);
                         editor.apply();
