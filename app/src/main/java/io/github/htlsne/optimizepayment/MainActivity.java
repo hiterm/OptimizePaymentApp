@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
 
         // ボタンの設定
+        // button_calc_for_payment
         findViewById(R.id.button_calc_for_payment).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
