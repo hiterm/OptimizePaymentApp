@@ -72,12 +72,18 @@ public class MainActivity extends AppCompatActivity
                 MoneySet moneySet = MoneySet.valueOf(walletAmount);
                 EditText editText = (EditText) findViewById(R.id.editText_total_amount);
                 int totalAmount = Integer.parseInt(editText.getText().toString());
-                int payment = moneySet.getSetForPayment(totalAmount).getAmount();
+                MoneySet paymentSet = moneySet.getSetForPayment(totalAmount);
 
                 TextView textViewPayment = (TextView) findViewById(R.id.textView_payment);
-                textViewPayment.setText(getString(R.string.show_payment, payment));
                 TextView textViewChange = (TextView) findViewById(R.id.textView_change);
-                textViewChange.setText(getString(R.string.show_change, payment - totalAmount));
+                if (paymentSet != null) {
+                    int payment = paymentSet.getAmount();
+                    textViewPayment.setText(getString(R.string.show_payment, payment));
+                    textViewChange.setText(getString(R.string.show_change, payment - totalAmount));
+                } else {
+                    textViewPayment.setText(R.string.show_payment_shortage);
+                    textViewChange.setText("");
+                }
             }
         });
     }
