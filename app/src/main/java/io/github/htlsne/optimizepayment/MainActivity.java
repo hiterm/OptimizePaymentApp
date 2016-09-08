@@ -8,6 +8,7 @@ import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -73,16 +74,15 @@ public class MainActivity extends AppCompatActivity
                 EditText editText = (EditText) findViewById(R.id.editText_total_amount);
                 String totalAmountStr = editText.getText().toString();
 
-                TextView textViewPayment = (TextView) findViewById(R.id.textView_payment);
-                TextView textViewChange = (TextView) findViewById(R.id.textView_change);
-
                 if ("".equals(totalAmountStr)) {    // 入力がなかったとき
-                    textViewPayment.setText(R.string.show_payment_no_input);
-                    textViewChange.setText("");
+                    DialogFragment dialog = new NoInputDialogFragment();
+                    dialog.show(getSupportFragmentManager(), "noInput");
                 } else {                            // 入力があったとき
                     int totalAmount = Integer.parseInt(editText.getText().toString());
                     MoneySet paymentSet = moneySet.getSetForPayment(totalAmount);
 
+                    TextView textViewPayment = (TextView) findViewById(R.id.textView_payment);
+                    TextView textViewChange = (TextView) findViewById(R.id.textView_change);
                     if (paymentSet != null) {   // お金が足りたとき
                         int payment = paymentSet.getAmount();
                         textViewPayment.setText(getString(R.string.show_payment, payment));
