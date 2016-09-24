@@ -141,8 +141,6 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_set_wallet_amount:
                 startActivity(new Intent(this, SetWalletAmountActivity.class));
                 break;
-            case R.id.nav_settings:
-                break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
