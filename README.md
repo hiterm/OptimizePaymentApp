@@ -4,6 +4,10 @@
 
 支払いの最適な小銭の出し方を計算するAndroidアプリ
 
+## Install
+
+releaseからapkをダウンロードして、手動でインストールしてください。
+
 ## References
 
 [財布の中の小銭の最適化について](http://takeno.iee.niit.ac.jp/~shige/math/lecture/misc/kozeni1/index.html)
