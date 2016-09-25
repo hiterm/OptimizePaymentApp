@@ -46,7 +46,7 @@ public class SetWalletAmountActivityTmp extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         // ボタンの設定
-        findViewById(R.id.button_set_wallet_amount).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.button_set_wallet_amount_tmp).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 EditText editText = (EditText) findViewById(R.id.editText_input_wallet_amount);

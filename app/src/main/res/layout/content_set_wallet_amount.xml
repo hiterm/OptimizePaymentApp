@@ -22,12 +22,12 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/editText_input_wallet_amount" />
+            android:id="@+id/editText_input_wallet_amount_tmp" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/button_set_wallet_amount"
-            android:id="@+id/button_set_wallet_amount" />
+            android:id="@+id/button_set_wallet_amount_tmp" />
     </LinearLayout>
 </RelativeLayout>
