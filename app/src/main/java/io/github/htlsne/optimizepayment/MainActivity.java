@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity
                 startActivity(new Intent(this, MainActivity.class));
                 break;
             case R.id.nav_set_wallet_amount:
-                startActivity(new Intent(this, SetWalletAmountActivity.class));
+                startActivity(new Intent(this, SetWalletAmountActivityTmp.class));
                 break;
         }
 

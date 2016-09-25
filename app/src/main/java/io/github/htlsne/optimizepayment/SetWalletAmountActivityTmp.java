@@ -17,13 +17,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class SetWalletAmountActivity extends AppCompatActivity
+public class SetWalletAmountActivityTmp extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_set_wallet_amount);
+        setContentView(R.layout.activity_set_wallet_amount_tmp);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -87,7 +87,7 @@ public class SetWalletAmountActivity extends AppCompatActivity
                 startActivity(new Intent(this, MainActivity.class));
                 break;
             case R.id.nav_set_wallet_amount:
-                startActivity(new Intent(this, SetWalletAmountActivity.class));
+                startActivity(new Intent(this, SetWalletAmountActivityTmp.class));
                 break;
         }
 

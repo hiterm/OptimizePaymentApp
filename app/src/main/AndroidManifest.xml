@@ -27,7 +27,7 @@
             android:value="@integer/google_play_services_version" />
 
         <activity
-            android:name=".SetWalletAmountActivity"
+            android:name=".SetWalletAmountActivityTmp"
             android:label="@string/title_activity_set_wallet_amount"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
