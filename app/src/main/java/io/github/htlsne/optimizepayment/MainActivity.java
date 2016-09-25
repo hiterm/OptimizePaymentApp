@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -15,8 +16,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
@@ -65,7 +66,8 @@ public class MainActivity extends AppCompatActivity
                 String totalAmountStr = editText.getText().toString();
 
                 if ("".equals(totalAmountStr)) {    // 入力がなかったとき
-                    Toast.makeText(getApplicationContext(), R.string.no_input, Toast.LENGTH_LONG).show();
+                    final LinearLayout layout = (LinearLayout) findViewById(R.id.root_layout_content_main);
+                    Snackbar.make(layout, R.string.no_input, Snackbar.LENGTH_LONG).show();
                 } else {                            // 入力があったとき
                     int totalAmount = Integer.parseInt(editText.getText().toString());
                     MoneySet paymentSet = moneySet.getSetForPayment(totalAmount);

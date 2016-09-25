@@ -3,10 +3,11 @@ package io.github.htlsne.optimizepayment;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.LinearLayout;
 
 public class SetWalletAmountActivity extends AppCompatActivity {
 
@@ -21,8 +22,9 @@ public class SetWalletAmountActivity extends AppCompatActivity {
             public void onClick(View view) {
                 EditText editText = (EditText) findViewById(R.id.editText_input_wallet_amount);
                 String walletAmountStr = editText.getText().toString();
+                final LinearLayout layout = (LinearLayout) findViewById(R.id.root_layout_activity_set_wallet_amount);
                 if ("".equals(walletAmountStr)) {
-                    Toast.makeText(getApplicationContext(), R.string.no_input, Toast.LENGTH_LONG).show();
+                    Snackbar.make(layout, R.string.no_input, Snackbar.LENGTH_LONG).show();
                 } else {
                     int walletAmount = Integer.parseInt(walletAmountStr);
 
@@ -30,7 +32,7 @@ public class SetWalletAmountActivity extends AppCompatActivity {
                     SharedPreferences.Editor editor = prefs.edit();
                     editor.putInt("walletAmount", walletAmount);
                     editor.apply();
-                    Toast.makeText(getApplicationContext(), R.string.finish_amount_set, Toast.LENGTH_LONG).show();
+                    Snackbar.make(layout, R.string.finish_amount_set, Snackbar.LENGTH_LONG).show();
                 }
             }
         });
