@@ -121,9 +121,6 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         switch (id) {
-            case R.id.nav_payment:
-                startActivity(new Intent(this, MainActivity.class));
-                break;
             case R.id.nav_set_wallet_amount:
                 startActivity(new Intent(this, SetWalletAmountActivity.class));
                 break;

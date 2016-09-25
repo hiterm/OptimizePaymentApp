@@ -3,9 +3,6 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_payment"
-            android:title="支払い" />
-        <item
             android:id="@+id/nav_set_wallet_amount"
             android:title="所持金の設定" />
     </group>
