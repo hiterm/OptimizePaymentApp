@@ -2,11 +2,11 @@
 
 ## Overview
 
-支払いの最適な小銭の出し方を計算するAndroidアプリ
+支払い時の最適な小銭の出し方を計算するAndroidアプリ
 
 ## Install
 
-releaseからapkをダウンロードして、手動でインストールしてください。
+[release](https://github.com/htlsne/OptimizePaymentApp/releases)からapkをダウンロードして、手動でインストールしてください。
 
 ## References
 
