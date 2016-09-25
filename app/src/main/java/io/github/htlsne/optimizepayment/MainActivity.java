@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
@@ -75,8 +76,7 @@ public class MainActivity extends AppCompatActivity
                 String totalAmountStr = editText.getText().toString();
 
                 if ("".equals(totalAmountStr)) {    // 入力がなかったとき
-                    DialogFragment dialog = new NoInputDialogFragment();
-                    dialog.show(getSupportFragmentManager(), "noInput");
+                    Toast.makeText(getApplicationContext(), R.string.no_input, Toast.LENGTH_LONG).show();
                 } else {                            // 入力があったとき
                     int totalAmount = Integer.parseInt(editText.getText().toString());
                     MoneySet paymentSet = moneySet.getSetForPayment(totalAmount);
