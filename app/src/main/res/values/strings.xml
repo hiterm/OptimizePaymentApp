@@ -18,4 +18,7 @@
 
     <string name="dialog_no_input">入力してください</string>
     <string name="dialog_no_input_positive_button">OK</string>
+
+    <string name="no_input">入力してください</string>
+    <string name="finish_amount_set">設定しました</string>
 </resources>
