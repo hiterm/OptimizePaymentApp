@@ -4,6 +4,11 @@
 
 支払い時の最適な小銭の出し方を計算するAndroidアプリ
 
+## Screenshots
+
+<img src="http://i.imgur.com/oGf12rg.png" width=300px>
+<img src="http://i.imgur.com/dLkjztI.png" width=300px>
+
 ## Install
 
 [release](https://github.com/htlsne/OptimizePaymentApp/releases)からapkをダウンロードして、手動でインストールしてください。
